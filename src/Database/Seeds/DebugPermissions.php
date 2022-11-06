@@ -48,7 +48,7 @@ class DebugPermissions extends BaseSeed  {
                 'slug' => 'debug_access',
                 'name' => 'Debug section access',
                 'conditions' => 'always()',
-                'descriptions' => 'Allow user to access the Debug section',
+                'description' => 'Allow user to access the Debug section',
             ])
         ];
     }
