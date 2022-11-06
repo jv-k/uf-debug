@@ -30,5 +30,5 @@ php bakery seed DebugPermissions
 
 Finally, add the sprinkle to your installing with the last step, which updates the autoloader:
 ```bash
-php bakery bake
+composer dump-autoload
 ```
