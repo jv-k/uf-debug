@@ -1,0 +1,21 @@
+{
+  "name": "uf-debug",
+  "version": "0.1.0",
+  "description": "A sprinkle for UserFrosting that displays debug information",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jv-k/uf-debug.git"
+  },
+  "homepage": "https://github.com/jv-k/uf-debug",
+  "author": {
+    "name": "John Valai",
+    "homepage": "http://jvk.to"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  },
+  "scripts": {
+    "ver-bump": "ver-bump -f composer.json -b"
+  }
+}

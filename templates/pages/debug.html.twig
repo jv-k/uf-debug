@@ -1,0 +1,55 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}Site Debug{% endblock %}
+{% block page_parent_title %}{% endblock %}
+
+{% block stylesheets_page %}
+    {{ assets.css('cp/css/pages/main') | raw }}
+{% endblock %}
+
+{% block scripts_page %}
+    <!-- Include page-specific JS -->
+    {# {{ assets.js('cp/js/debug') | raw }} #}
+{% endblock %}
+
+{% block body_matter %}
+
+    {% set firstPaneId = debugPanes | keys | first  %}
+    <div class="jumbotron">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            {% for paneId, paneDetails  in debugPanes %}
+            <li role="presentation" {% if paneId == firstPaneId %} class="active"{% endif %}>
+                <a href="#{{ paneId }}" aria-controls="{{ paneId }}" role="tab" data-toggle="tab">{{ paneDetails['title'] }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+            {% for paneId, paneDetails in debugPanes %}
+
+            <div role="tabpanel" class="tab-pane {% if paneId == firstPaneId %} active{% endif %}" id="{{ paneId }}">
+                <div class="row">    
+                    <div class="panel">
+                        <div class="panel-body">
+                        {% if paneDetails['isRaw'] == true %}
+                            {{ paneDetails['body']|raw }}                
+                        {% else %}
+                            {{ paneDetails['body'] }}
+                        {% endif %}
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+{% endblock %}

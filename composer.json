@@ -1,0 +1,18 @@
+{
+  "name": "jv-k/uf-debug",
+  "version": "0.1.0",
+  "description": "Debug Sprinkle for UserFrostion",
+  "homepage": "https://github.com/jv-k/uf-debug",
+  "type": "userfrosting-sprinkle",
+  "authors": [
+    {
+      "name": "John Valai",
+      "homepage": "http://jvk.to"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "UserFrosting\\Sprinkle\\UfDebug\\": "src/"
+    }
+  }
+}
